@@ -16,7 +16,8 @@ export class HeroesComponent implements OnInit {
   ngOnInit(): void {
     // this.getHeroes();
     //synchronous process
-    this.heroes = this.heroService.getHeroes();
+    //this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
 
   onSelect(hero: Hero): void{
